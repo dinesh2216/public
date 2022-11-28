@@ -1,0 +1,25 @@
+#csv file operations
+import csv
+import os
+import pandas as pd
+
+def convert():
+    path = input("enter the path of the file: ")
+    os.chdir(path)
+    file = input("enter the name of the file: ")
+    fname = file + ".txt"
+    savelocation = input(("enter path of the file: "))
+    os.chdir(savelocation)
+    open = pd.read_csv(fname)
+    open.to_csv(fname + ".csv",index=None)
+    print("file converted successfully ")
+
+def create():
+    path = input("enter the path of the file")
+    os.chdir(path)
+    file = input("enter the name of the file: ")
+    fname = file + ".txt"
+    fname = fname + ".csv"
+    with open(fname, "w") as file:
+        print("file converted successfully")
+        print("the path of the file", os.path.abspath(fname))
