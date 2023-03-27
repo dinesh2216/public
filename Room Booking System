@@ -1,0 +1,133 @@
+print("Room Booking system")
+
+room_no=[]
+price = []
+name=[]
+mobilenumber=[]
+mailid=[]
+numberofpeople=[]
+days_of_living=[]
+detailes = {}
+def dictcreation(cust):
+    cust_details = cust
+    rno = cust_details[0]
+    while(1):
+        for i in range(0,len(cust_details)+1):
+            if(i==0):
+                
+def booking_detailes(sc):
+    while(1):
+        for i in range(1,5):
+            if(i == 1):
+                def yourname():
+                    people = input("Enter Your Name: ")
+                    check = people.isalpha()
+                    if(check!=True):
+                        print("Check the name: ")
+                        yourname()
+                    else:
+                        name.append(people)
+                yourname()
+            elif(i==2):
+                def number():
+                    phonenumber = input("Enter your mobile numer: ")
+                    ln = len(phonenumber)
+                    if(ln > 10  or ln < 10):
+                        print("Mobile number consist more than 10 digits please re enter the mobile number")
+                        number()
+                    else:
+                        mobilenumber.append(phonenumber)
+                number()
+            elif(i==3):
+                def gmail():
+                    email = input("Enter Your Email-id: ")
+                    check = email.isdigit()
+                    if(check!=True):
+                        return(email)
+                    else:
+                        mailid.append(email)
+                gmail()
+            elif(i==4):
+                def nop():
+                    np = input("Enter Total Number of peolple lives in: ")
+                    if(len(np)>5):
+                        print("choose another room")
+                        avaiablerooms()
+                    else:
+                        numberofpeople.append(np)
+                nop()
+        coustmer = room_no + name + mobilenumber + mailid + numberofpeople + price + days_of_living
+        variable = ["name","mobilenumber","mailid","people stay","total room cost","day of living"]
+        print(len(coustmer))
+        print(len(variable))
+        dictcreation(coustmer)
+            
+            print(detailes)
+        break
+    
+    
+def avaiable_ac_rooms():
+    print("Room no:305 - Marasa Sarovar Premiere RS:1500/Night")
+    print("Room no:306 FabHotel Aditya Yatri Nivas RS: 500/Night")
+    print("Room no:307 Taj Tirupati RS: 2000/Night")
+    print("Room no:308 Pai Viceroy RS:10,0000/Night")
+    print("Room no:309 Fortune Select Grand Ridge, Tirupati - Member ITC's Hotel Group RS:50000/Night")
+    print("Room no:310 Raj Park- Hill View RS:20,0000/Night")
+    select = int(input("Enter the selected room number: "))
+    number_of_days_living = int(input("Enter how many nights of stay: "))
+    days_of_living.append(number_of_days_living)
+    if(select==305):
+        room_no.append(305)
+        price.append(number_of_days_living*1500)
+        booking_detailes(305)
+    elif(select==306):
+        room_no.append(306)
+        price.append(number_of_days_living*500)
+        booking_detailes(306)
+    elif(select==307):
+        room_no.append(307)
+        price.append(number_of_days_living*2000)
+        booking_detailes(307)
+    elif(select==308):
+        room_no.append(308)
+        price.append(number_of_days_living*10000)
+        booking_detailes(308)
+    elif(select==309):
+        room_no.append(309)
+        price.append(number_of_days_living*5000)
+        booking_detailes(309)
+    elif(select==310):
+        room_no.append(310)
+        price.append(number_of_days_living*20000)
+        booking_detailes(310)
+    else:
+        print("Can you please select the Options display above: ")
+        avaiable_ac_rooms()
+    
+
+def avaiablerooms():
+    print('''select the room type''')
+    print('''1 ac 
+2. non-ac''')
+    choice = int(input("Select an option: "))
+    if(choice == 1):
+        avaiable_ac_rooms()
+    elif(choice==2):
+        avaiable_non_acrooms()
+    else:
+        print(" \n sorry i cant read you chooce the option in between 1 and 2 ")
+        avaiablerooms()
+
+def roombookingprogram():
+    print('''1 Avaiable Rooms
+2 UnAvaiable Rooms''')
+    choice = int(input( "Waiting for your input "))
+    if(choice == 1):
+        avaiablerooms()
+    elif(choice ==2):
+        unavaiablerooms()
+    else:
+        print("choose the option in between 1 and 2")
+        roombookingprogram()
+
+roombookingprogram()
