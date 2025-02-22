@@ -1,0 +1,18 @@
+Flask
+Flask-cors
+flask-jwt-extended==4.6.0
+python-dotenv
+langchain-community
+langchain-openai
+langchain-huggingface
+langchain-groq
+langchain-qdrant
+tiktoken
+pyodbc
+markdown2
+PyPDF2==3.0.1
+openai
+qdrant-client
+scikit-learn
+fastembed
+# sentence-transformers

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: esg-ai-assistant
+    container_name: esg-chatbot
+    restart: always
+    ports:
+      - 5005:5005
+    environment:
+      - SQL_SERVER_HOST=localhost
+      - SQL_SERVER_DATABASE=rhybus
+      - SQL_SERVER_USERNAME=sa
+      - SQL_SERVER_PASSWORD=PassWord1
